@@ -112,7 +112,7 @@ body.loaded {
 /* Menu dropdown xuất hiện khi hover */
 .dropdown-menu{
     position:absolute;
-    top: 100%; /* Hiển thị ngay dưới item cha */
+    bottom: 100%; /* Hiển thị lên trên item cha */
     left: 0; /* Canh trái với item cha */
     display:block;
     padding: 24px;
@@ -122,7 +122,9 @@ body.loaded {
     border-radius: 8px;
     line-height: 40px;
     min-width: 200px; /* Chiều rộng tối thiểu */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Bóng đổ nhẹ */
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Bóng đổ hướng lên */
+    margin-bottom: 8px; /* Khoảng cách với item cha */
+    z-index: 1001; /* Đảm bảo hiển thị trên các element khác */
 }
 
 /* Style cho item trong dropdown */
@@ -154,6 +156,39 @@ body.loaded {
 
 /* Hiện dropdown khi hover vào navigation */
 .navigation:hover .dropdown-menu{display:block}
+
+/* Đảm bảo dropdown menu hoạt động tốt trên desktop */
+@media (min-width: 769px) {
+    /* Dropdown menu của các item cuối cùng canh phải */
+    .navigation:last-child .dropdown-menu,
+    .navigation:nth-last-child(2) .dropdown-menu {
+        left: auto;
+        right: 0; /* Canh phải với item cha */
+        bottom: 100%; /* Vẫn hiển thị lên trên */
+    }
+    
+    /* Nếu dropdown quá dài, tự động điều chỉnh vị trí */
+    .navigation:hover .dropdown-menu {
+        max-height: calc(100vh - 120px); /* Giới hạn chiều cao */
+        overflow-y: auto; /* Cho phép scroll nếu quá dài */
+    }
+    
+    /* Đảm bảo dropdown menu có thể tương tác được */
+    .dropdown-menu {
+        pointer-events: auto; /* Cho phép click */
+        visibility: visible;
+    }
+    
+    /* Đảm bảo navigation có thể hover được */
+    .navigation {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .navigation:hover {
+        z-index: 1002; /* Tăng z-index khi hover */
+    }
+}
 
 /* Hamburger Menu - ẩn mặc định */
 .hamburger-menu {
@@ -559,6 +594,25 @@ body.loaded {
         padding: 12px;
         font-size: 18px;
     }
+    
+    /* Đảm bảo dropdown menu hoạt động tốt trên tablet */
+    .dropdown-menu {
+        bottom: 100%; /* Hiển thị lên trên */
+        max-height: 60vh; /* Giới hạn chiều cao */
+        overflow-y: auto; /* Cho phép scroll */
+        z-index: 1001;
+        pointer-events: auto;
+    }
+    
+    /* Đảm bảo navigation có thể hover được */
+    .navigation {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .navigation:hover {
+        z-index: 1002; /* Tăng z-index khi hover */
+    }
 }
 
 @media (max-width: 1024px) {
@@ -581,6 +635,12 @@ body.loaded {
 
     .navigation {
         padding: 6px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .navigation:hover {
+        z-index: 1002; /* Tăng z-index khi hover */
     }
 
     .navigation .nav-name {
@@ -592,10 +652,17 @@ body.loaded {
         font-size: 15px;
         padding: 16px;
         min-width: 180px;
+        bottom: 100%; /* Hiển thị lên trên */
+        max-height: 50vh; /* Giới hạn chiều cao */
+        overflow-y: auto; /* Cho phép scroll */
+        z-index: 1001;
+        pointer-events: auto; /* Đảm bảo có thể click */
+        box-shadow: 0 -4px 8px rgba(0,0,0,0.15); /* Bóng đổ hướng lên */
     }
 
     .dropdown-item {
         font-size: 15px;
+        pointer-events: auto; /* Đảm bảo có thể click */
     }
 }
 
