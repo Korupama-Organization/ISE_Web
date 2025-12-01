@@ -627,3 +627,22 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, div {
     .lecturer-section:target {
         display: block; /* Chỉ hiện section có id trùng với # trên URL */
     }
+
+
+.lecturer-section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+    /* Tạo khoảng cách dọc giữa các card: Thông tin – Giới thiệu – Lĩnh vực – Công trình */
+    .lecturer-section > .profile-intro,
+    .lecturer-section > .profile-bio,
+    .lecturer-section > .research-fields,
+    .lecturer-section > .info-wrapper {
+        margin-top: 24px;
+    }
+
+    /* Card đầu tiên (profile-intro) không cần margin-top */
+    .lecturer-section > .profile-intro {
+        margin-top: 0;
+    }
