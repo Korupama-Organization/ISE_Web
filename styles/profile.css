@@ -618,3 +618,12 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, div {
         .return-left-button img:hover {
             transform: scale(1.1);
         }
+
+/* ===== Hiển thị từng giảng viên theo #id trong thong-tin-giang-vien.html ===== */
+.lecturer-section {
+    display: none; /* Ẩn tất cả mặc định */
+}
+
+    .lecturer-section:target {
+        display: block; /* Chỉ hiện section có id trùng với # trên URL */
+    }
