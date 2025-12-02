@@ -602,6 +602,14 @@ body {
 }
 
          /* ===== TRANG TIN TỐT CHI TIẾT ===== */
+section {
+    display: none; /* Ẩn tất cả mặc định */
+}
+
+section:target {
+    display: block; /* Chỉ hiện section có id trùng với # trên URL */
+}
+
 .new-example-nav{
     width:1000px;
     margin-left: auto;
