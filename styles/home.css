@@ -965,21 +965,38 @@
         width: 20px;
     }
     
-    .welcome, .field-introduction, .field, .tabs, .remarkable-result, .partner, .intro {
+    .welcome {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
         width: 100% !important;
-        margin-left: auto;
-        margin-right: auto;
-        box-sizing: border-box;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        margin: 0 auto !important;
     }
-    .tabs-nav, .tabs-content, .tabs-content-items, .tabs-nav-item, .tabs-content-items a {
+    .welcome-img {
+        order: 1 !important;
         width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        display: flex;
+        justify-content: center;
     }
+    .welcome-img img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 350px; /* hoặc 100%, nhỏ hơn tuỳ layout mong muốn */
+        display: block;
+        margin: 0 auto;
+    }
+    .welcome-content {
+        order: 2 !important;
+        width: 100% !important;
+        max-width: 400px;
+        margin: 0 auto !important;
+        text-align: center !important;
+        align-items: center !important;
+        padding: 0 10px !important;
+        box-sizing: border-box;
+    }
+    
     .field-introduction, .field-introduction > * {
         text-align: center;
     }
