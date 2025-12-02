@@ -1,28 +1,32 @@
-// Vô hiệu hóa tất cả các tab (bỏ class active)
+
+// Cache DOM elements at module initialization
+const tabDataScience = document.getElementById("tab-data-science");
+const tabMobileWeb = document.getElementById("tab-mobile-web");
+const dataScienceContent = document.getElementById("dataScience");
+const mobileWebContent = document.getElementById("mobileWeb");
+
 function disableAllTabs() {
-    document.getElementById("tab-data-science").classList.remove("active");
-    document.getElementById("tab-mobile-web").classList.remove("active");
+    tabDataScience.classList.remove("active");
+    tabMobileWeb.classList.remove("active");
 }
 
-// Hiển thị tab Bộ môn Khoa học Dữ liệu
 function showDataScience() {
     disableAllTabs();
-    document.getElementById("mobileWeb").classList.add("hidden"); // Ẩn nội dung tab Mobile Web
-    document.getElementById("dataScience").classList.remove("hidden"); // Hiện nội dung tab Data Science
-    document.getElementById("tab-data-science").classList.add("active"); // Đánh dấu tab active
+    mobileWebContent.classList.add("hidden"); // Ẩn nội dung tab Mobile Web
+    dataScienceContent.classList.remove("hidden"); // Hiện nội dung tab Data Science
+    tabDataScience.classList.add("active"); // Đánh dấu tab active
 }
 
-// Hiển thị tab Bộ môn Thiết bị Di động và Công nghệ Web
 function showMobileWeb() {
     disableAllTabs();
-    document.getElementById("dataScience").classList.add("hidden"); // Ẩn nội dung tab Data Science
-    document.getElementById("mobileWeb").classList.remove("hidden"); // Hiện nội dung tab Mobile Web
-    document.getElementById("tab-mobile-web").classList.add("active"); // Đánh dấu tab active
+    dataScienceContent.classList.add("hidden"); // Ẩn nội dung tab Data Science
+    mobileWebContent.classList.remove("hidden"); // Hiện nội dung tab Mobile Web
+    tabMobileWeb.classList.add("active"); // Đánh dấu tab active
 }
 
 // Gắn sự kiện click cho các tab
-document.getElementById("tab-data-science").addEventListener("click", showDataScience);
-document.getElementById("tab-mobile-web").addEventListener("click", showMobileWeb);
+tabDataScience.addEventListener("click", showDataScience);
+tabMobileWeb.addEventListener("click", showMobileWeb);
 
 // Xác định tab mặc định dựa trên URL parameter
 const params = new URLSearchParams(window.location.search);

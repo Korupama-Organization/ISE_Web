@@ -1,51 +1,3 @@
-// Hàm tải header và footer động dựa trên đường dẫn trang hiện tại
-function loadHeaderAndFooter() {
-    const currentPath = window.location.pathname; // Lấy đường dẫn hiện tại
-    let componentsPath = '../components/'; // Đường dẫn mặc định đến thư mục components
-    
-    // Điều chỉnh đường dẫn cho các trang trong thư mục con
-    if (currentPath.includes('/nhom-nghien-cuu/') || 
-        currentPath.includes('/doi-ngu-nhan-su/') || 
-        currentPath.includes('/gioi-thieu/') ||
-        currentPath.includes('/tin-tuc/')) {
-        componentsPath = '../../components/';
-    }
-    
-    // Sử dụng Promise.all để đợi cả header và footer load xong
-    const headerPromise = fetch(componentsPath + 'header.html')
-        .then(response => response.text())
-        .then(data => {
-            const headerContainer = document.getElementById('header-container');
-            if (headerContainer) {
-                headerContainer.innerHTML = data; // Chèn nội dung header vào container
-            }
-        })
-        .catch(error => console.error('Lỗi khi tải header:', error));
-
-    const footerPromise = fetch(componentsPath + 'footer.html')
-        .then(response => response.text())
-        .then(data => {
-            const footerContainer = document.getElementById('footer-container');
-            if (footerContainer) {
-                footerContainer.innerHTML = data; // Chèn nội dung footer vào container
-            }
-        })
-        .catch(error => console.error('Lỗi khi tải footer:', error));
-    
-    // Đợi cả header và footer load xong, sau đó hiển thị trang
-    Promise.all([headerPromise, footerPromise])
-        .then(() => {
-            // Thêm class 'loaded' vào body để hiển thị trang với transition mượt
-            document.body.classList.add('loaded');
-            console.log('Header và Footer đã tải xong, trang đã sẵn sàng hiển thị');
-        })
-        .catch(error => {
-            console.error('Lỗi khi tải components:', error);
-            // Vẫn hiển thị trang nếu có lỗi để tránh trang bị trắng vĩnh viễn
-            document.body.classList.add('loaded');
-        });
-}
-
 // Khởi tạo các thành phần chung (header, footer)
 function initCommonElements() {
     loadHeaderAndFooter();
@@ -58,7 +10,7 @@ if (document.readyState === 'loading') {
     initCommonElements(); // Chạy ngay nếu DOM đã load xong
 }
 
-//Hiệu ứng chuyển slide hình ảnh
+// Cache slider elements at module initialization
 let slider = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
 let next = document.getElementById('next');
@@ -67,6 +19,8 @@ let dots = document.querySelectorAll('.slider .dots li');
 
 let lengthItems = items.length - 1;
 let active = 0;
+
+// Slider navigation
 next.onclick = function(){
     active = active + 1 <= lengthItems ? active + 1 : 0;
     reloadSlider();
@@ -75,18 +29,18 @@ prev.onclick = function(){
     active = active - 1 >= 0 ? active - 1 : lengthItems;
     reloadSlider();
 }
+
 let refreshInterval = setInterval(()=> {next.click()}, 5000);
+
 function reloadSlider(){
     slider.style.left = -items[active].offsetLeft + 'px';
-    // 
+    
     let last_active_dot = document.querySelector('.slider .dots li.active');
     last_active_dot.classList.remove('active');
     dots[active].classList.add('active');
 
     clearInterval(refreshInterval);
     refreshInterval = setInterval(()=> {next.click()}, 5000);
-
-    
 }
 
 dots.forEach((li, key) => {
@@ -95,6 +49,7 @@ dots.forEach((li, key) => {
          reloadSlider();
     })
 })
+
 window.onresize = function(event) {
     reloadSlider();
 };

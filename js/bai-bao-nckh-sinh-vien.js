@@ -6,12 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Chức năng accordion cho danh sách bài báo theo năm
-    const toggles = document.querySelectorAll('.year-toggle');
-    toggles.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-            this.classList.toggle('active'); // Bật/tắt trạng thái active
-            const content = this.nextElementSibling; // Lấy panel nội dung
-            content.classList.toggle('show'); // Hiển thị/ẩn nội dung
-        });
-    });
+        // Khởi tạo accordion cho các phần tử .year-toggle
+        if (typeof initAccordion === 'function') {
+            initAccordion('.year-toggle');
+        }
+        // ...existing code...
 });
