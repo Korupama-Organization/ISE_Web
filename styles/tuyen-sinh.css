@@ -1,5 +1,5 @@
 ﻿
-﻿:root {
+:root {
     --primary-color: #083344;
     --secondary-color: #06b6d4;
     --text-dark: #0a0a0a;
@@ -30,11 +30,10 @@ body {
 
 }
 
-    /*thu gọn body*/
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background-color: transparent !important; 
+    background-color: transparent !important;
     color: var(--text-dark);
 }
 
@@ -103,7 +102,7 @@ img {
     position: relative;
     width: 1140px;
     height: 345px;
-    margin: 0 auto;
+    margin-top: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,9 +176,9 @@ img {
     display: inline-flex;
     width: 384px;
     height: 76px;
-    position: absolute;
+    position: relative;
     left: 50%;
-    bottom: -38px; /* “rơi” xuống dưới mép banner một chút */
+    bottom: -36px;
     transform: translateX(-50%);
     z-index: 10;
     align-items: center;
@@ -187,7 +186,7 @@ img {
     padding: 8px 12px;
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
 }
 
 
@@ -561,7 +560,7 @@ img {
     display: none;
     justify-content: center;
     padding: 0 16px 40px;
-    margin-top: 60px;
+    margin-top: 0px;
 }
 
     /* Chỉ tab đang active mới hiển thị */
