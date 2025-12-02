@@ -965,22 +965,23 @@
         width: 20px;
     }
     
-    .welcome,
-    .field-introduction,
-    .field,
-    .tabs,
-    .remarkable-result,
-    .partner,
-    .intro,
-    .tabs-content,
-    .tabs-content-items
-    {
+    .welcome, .field-introduction, .field, .tabs, .remarkable-result, .partner, .intro {
         width: 100% !important;
         margin-left: auto;
         margin-right: auto;
         box-sizing: border-box;
         padding-left: 0 !important;
         padding-right: 0 !important;
+    }
+    .tabs-nav, .tabs-content, .tabs-content-items, .tabs-nav-item, .tabs-content-items a {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .field-introduction, .field-introduction > * {
+        text-align: center;
     }
     
     .welcome-content p{
