@@ -601,10 +601,143 @@ body {
   height:64px;
 }
 
+         /* ===== TRANG TIN TỐT CHI TIẾT ===== */
+.news-section {
+    display: none; /* Ẩn tất cả mặc định */
+}
 
- /* ===== TRANG TIN TỐT NGHIỆP ===== */
+.news-section:target {
+    display: block; /* Chỉ hiện section có id trùng với # trên URL */
+}
 
+.new-example-nav{
+    width:1000px;
+    margin-left: auto;
+    margin-right:auto;
+    display:flex;
+    gap:620px;
+    align-items: center;
+}
  
+.flex-link{
+    display:flex;
+    gap:30px;
+}
+
+.flex-link a{
+    color: var(--Cyan-500, #06B6D4);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.new-example-nav h3{
+    color: var(--Cyan-500, #06B6D4);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.main-content h2{
+    text-align: center;
+    color: var(--Cyan-950, #000);
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.main-content p{
+    text-align:justify;
+    width:1000px;
+    margin: 30px auto;
+    color: var(--Cyan-950, #000);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.main-content li{
+    text-align:justify;
+    width:1000px;
+    margin: 30px auto;
+    color: var(--Cyan-950, #000);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.main-content img{
+    width:600px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-and-readmore{
+    width:1000px;
+    margin: 20px auto;
+    display:flex;
+    gap: 500px;
+}
+
+.back-and-readmore a{
+    padding: 32px 12px;
+    width:fit-content;
+    height:fit-content;
+    color: var(--Cyan-950, #000);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+    background-color: #E4E3E3;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.back-and-readmore a:hover{
+    background-color: #083344;
+    color:#fff;
+}
+
+.save-and-share{
+    display:flex;
+    gap:12px;
+}
+
+.save-and-share button{
+    width:fit-content;
+    height:fit-content;
+    border:none;  
+}
+
+.save-and-share button div{
+    display:flex;
+}
+
+.save-and-share p{
+    padding:12px;
+    color: var(--Cyan-50, #000);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
 /* Responsive fixes for flex layouts */
 @media (max-width: 1024px) {
     .decorate-picture {
@@ -899,6 +1032,60 @@ body {
     .side-list-items a {
         font-size: 14px;
     }
+    .new-example-nav{
+        width:720px;
+        gap:280px;
+    }
+
+    .flex-link{
+        gap:16px;
+    }
+    .flex-link a{
+        font-size: 14px;
+    }
+    .new-example-nav h3{
+        font-size: 14px;
+    }
+    .main-content{
+        width:720px;
+    }
+
+    .main-content img{
+        width:520px;
+    }
+
+    .main-content h2{
+        font-size: 28px;
+    }
+
+    .main-content p{
+        font-size: 16px;
+        width:720px;
+    }
+
+    .main-content li{
+        width:700px;
+        font-size: 16px;
+    }
+
+    .back-and-readmore{
+        width:720px;
+        gap:200px;
+    }
+
+    .back-and-readmore a{
+        width:fit-content;
+        height:fit-content;
+        font-size: 16px;
+        padding: 32px 12px;
+    }
+
+    .save-and-share img{
+        padding:6px;
+    }
+    .save-and-share div p{
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1041,5 +1228,60 @@ body {
     
     .side-list-items a {
         font-size: 13px;
+    }
+    .new-example-nav{
+        width:440px;
+        gap:140px;
+    }
+
+    .flex-link{
+        gap:12px;
+    }
+    .flex-link a{
+        font-size: 10px;
+    }
+    .new-example-nav h3{
+        font-size: 10px;
+    }
+    .main-content{
+        width:440px;
+    }
+
+    .main-content img{
+        width:240px;
+    }
+
+    .main-content h2{
+        font-size: 20px;
+        word-wrap:break-word;
+    }
+
+    .main-content p{
+        font-size: 12px;
+        width:440px;
+    }
+
+    .main-content li{
+        width:400px;
+        font-size: 12px;
+    }
+
+    .back-and-readmore{
+        width:440px;
+        gap:160px;
+    }
+
+    .back-and-readmore a{
+        width:fit-content;
+        height:fit-content;
+        font-size: 10px;
+        padding: 12px;
+    }
+
+    .save-and-share img{
+        padding:6px;
+    }
+    .save-and-share div p{
+        display:none;
     }
 }   
