@@ -614,25 +614,6 @@
         gap: 60px;
     }
     
-    .field-introduction, .field, .tabs, .tabs-content, .tabs-content-items, .tabs-nav, .tabs-nav-item {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    .intro-content {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 14px !important;
-        width: 100% !important;
-    }
-    .tabs-content-items, .tabs-content { align-items: center !important; }
-    .tabs-nav-item { text-align: center !important; }
-    
     .field-introduction{
         width: 90%;
     }
@@ -723,24 +704,6 @@
 
 /* Tablet nhỏ - 768px */
 @media screen and (max-width: 768px){
-    .field-introduction, .field, .tabs, .tabs-content, .tabs-content-items, .tabs-nav, .tabs-nav-item {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    .intro-content {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 8px !important;
-        width: 100% !important;
-    }
-    .tabs-content-items, .tabs-content { align-items: center !important; }
-    .tabs-nav-item { text-align: center !important; }
     .slider{
         height: 400px;
     }
@@ -955,24 +918,6 @@
 
 /* Mobile - 480px */
 @media screen and (max-width: 480px){
-    .field-introduction, .field, .tabs, .tabs-content, .tabs-content-items, .tabs-nav, .tabs-nav-item {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    .intro-content {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 6px !important;
-        width: 100% !important;
-    }
-    .tabs-content-items, .tabs-content { align-items: center !important; }
-    .tabs-nav-item { text-align: center !important; }
     .slider{
         height: 300px;
         margin: 10px auto;
