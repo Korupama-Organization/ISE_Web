@@ -595,12 +595,9 @@
         font-size: 16px;
     }
     
-    .welcome,
-    .field-introduction,
-    .field {
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%;
+    .welcome{
+        width: 90%;
+        gap: 30px;
     }
     
     .welcome-img img{
@@ -744,12 +741,10 @@
         font-size: 14px;
     }
     
-    .welcome,
-    .field-introduction,
-    .field {
-        margin-left: auto;
-        margin-right: auto;
-        width: 98%;
+    .welcome{
+        flex-direction: column;
+        width: 90%;
+        gap: 20px;
     }
     
     .welcome-img img{
@@ -965,40 +960,9 @@
         width: 20px;
     }
     
-    .welcome {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-    }
-    .welcome-img {
-        order: 1 !important;
-        width: 100% !important;
-        display: flex;
-        justify-content: center;
-    }
-    .welcome-img img {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 350px; /* hoặc 100%, nhỏ hơn tuỳ layout mong muốn */
-        display: block;
-        margin: 0 auto;
-    }
-    .welcome-content {
-        order: 2 !important;
-        width: 100% !important;
-        max-width: 400px;
-        margin: 0 auto !important;
-        text-align: center !important;
-        align-items: center !important;
-        padding: 0 10px !important;
-        box-sizing: border-box;
-    }
-    
-    .field-introduction, .field-introduction > * {
-        text-align: center;
+    .welcome{
+        margin-top: 30px;
+        gap: 15px;
     }
     
     .welcome-content p{
