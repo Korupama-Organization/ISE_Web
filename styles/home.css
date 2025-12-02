@@ -967,10 +967,20 @@
     
     .welcome,
     .field-introduction,
-    .field {
+    .field,
+    .tabs,
+    .remarkable-result,
+    .partner,
+    .intro,
+    .tabs-content,
+    .tabs-content-items
+    {
+        width: 100% !important;
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
+        box-sizing: border-box;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     
     .welcome-content p{
