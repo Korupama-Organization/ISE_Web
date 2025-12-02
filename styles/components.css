@@ -1,11 +1,4 @@
 /* ===== KIỂU CHUNG CHO TOÀN BỘ TRANG ===== */
-
-/* Prevent horizontal scrolling and ensure full width */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
-
 /* Ẩn body cho đến khi trang tải xong - ngăn chặn nội dung nhấp nháy */
 body:not(.loaded) {
     opacity: 0;
@@ -22,19 +15,21 @@ body.loaded {
 /* Kiểu header - áp dụng cho cả class .header và id #header */
 .header,
 #header {
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+    z-index: 1000; /* Always display on top */
     display: flex;
     width: 100%;
     max-width: 1440px;
-    height: auto;
-    min-height: 100px;
-    padding: 12px 64px;
+    min-height: 80px;
+    height:80px;
+    padding: 0px 64px;
     align-items: center;
     gap: 52px;
     background: var(--Neutral-50, #FAFAFA);
-    position: sticky; /* Header sticks to top when scrolling */
-    top: 0;
-    z-index: 1000; /* Always display on top */
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     box-sizing: border-box;
     flex-wrap: nowrap;
@@ -78,7 +73,6 @@ body.loaded {
     flex-direction: row;
     align-items: center;
     gap: 0px;
-    align-self: stretch;
     font-size: 20px;
     font-family: "Gelasio", Noto Sans Arabic, Time New Roman;
     font-weight:  bold;
@@ -632,13 +626,7 @@ body.loaded {
     }
     
     /* Đảm bảo menu dropdown hoạt động tốt trên tablet */
-    .dropdown-menu {
-        bottom: 100%; /* Display above */
-        max-height: 60vh; /* Limit height */
-        overflow-y: auto; /* Allow scroll */
-        z-index: 1001;
-        pointer-events: auto;
-    }
+    
     
     /* Đảm bảo điều hướng có thể hover */
     .navigation {
@@ -653,7 +641,7 @@ body.loaded {
 
 @media (max-width: 1024px) {
     .header, #header {
-        height: auto;
+        height: 80px;
         padding: 16px 20px;
         gap: 24px;
         min-height: 80px;
@@ -688,9 +676,6 @@ body.loaded {
         font-size: 15px;
         padding: 16px;
         min-width: 180px;
-        bottom: 100%; /* Display above */
-        max-height: 50vh; /* Limit height */
-        overflow-y: auto; /* Allow scroll */
         z-index: 1001;
         pointer-events: auto; /* Ensure clickable */
         box-shadow: 0 -4px 8px rgba(0,0,0,0.15); /* Shadow pointing upward */
