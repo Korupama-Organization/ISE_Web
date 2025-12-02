@@ -1,6 +1,4 @@
-﻿hãy xem xem, đây có phải phần code lúc đầu không
-﻿
-:root {
+﻿﻿:root {
     --primary-color: #083344;
     --secondary-color: #06b6d4;
     --text-dark: #0a0a0a;
@@ -22,10 +20,10 @@ html {
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background-color: #f3f4f6;
+    background-color: #f3f4f6; 
     color: var(--text-dark);
-    overflow-x: hidden; 
-
+    overflow-x: hidden;
+}
 
 a {
     color: inherit;
@@ -168,7 +166,7 @@ img {
     height: 76px;
     position: absolute;
     left: 50%;
-    bottom: -38px; 
+    bottom: -38px; /* “rơi” xuống dưới mép banner một chút */
     transform: translateX(-50%);
     z-index: 10;
     align-items: center;
@@ -217,11 +215,39 @@ img {
 
 
 /* Mobile */
+/* Mobile: chỉ chỉnh BANNER */
 @media (max-width: 768px) {
+    /* Banner chiếm full chiều ngang container, co theo màn hình */
+    .hero-banner {
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        margin-top: 16px;
+    }
+
+    /* Ảnh nền phủ kín banner, không bị cắt kỳ lạ */
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        margin: 0;
+    }
+
+    /* Lớp phủ cũng co theo */
+    .hero-banner::before {
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+    }
+
+    /* Chữ bên trong banner trên mobile */
     .hero-content {
-        top: 16px;
-        left: 16px;
-        right: 16px;
+        inset: 0;
+        padding: 0 24px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .hero-title {
@@ -502,7 +528,7 @@ img {
 /* =========================================
    Media queries
 ========================================= */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .main-content {
         flex-direction: column;
     }
@@ -513,7 +539,7 @@ img {
     }
 }
 
-/*@media (max-width: 768px) {
+@media (max-width: 768px) {
     .hero-banner {
         border-radius: 24px;
     }
@@ -544,105 +570,6 @@ img {
         width: calc(100% - 64px);
         bottom: -32px;
     }
-}*/
-
-@media (max-width: 768px) {
-    .page-container {
-        max-width: 100%;
-        margin: 12px auto 24px;
-        border-radius: 16px;
-    }
-
-    .hero-wrapper {
-        padding: 0 0 64px; /* chừa chỗ cho cụm nút */
-    }
-
-    .hero-banner {
-        width: 100%;
-        height: auto;
-        border-radius: 24px;
-        margin-top: 16px;
-    }
-
-    .hero-image {
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-    }
-
-    .hero-banner::before {
-        width: 100%;
-        height: 100%;
-    }
-
-    .hero-content {
-        padding: 0 24px;
-    }
-
-    .hero-title {
-        font-size: 32px;
-        margin-bottom: 8px;
-    }
-
-    .hero-subtitle {
-        font-size: 18px;
-        margin-bottom: 4px;
-    }
-
-    .hero-buttons {
-        width: 100%;
-        max-width: 320px; /* thu gọn cụm nút */
-        height: auto;
-        bottom: -32px;
-        left: 50%;
-        transform: translateX(-50%);
-        flex-direction: column;
-        padding: 8px;
-        gap: 8px;
-    }
-
-        .hero-buttons .btn {
-            width: 100%;
-            height: 48px;
-            font-size: 16px;
-        }
-
-    .main-content-wrapper {
-        padding: 56px 16px 40px;
-    }
-
-    .main-content {
-        gap: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-banner {
-        border-radius: 16px;
-        width: calc(100% - 24px);
-        margin-left: 12px;
-        margin-right: 12px;
-    }
-
-    .hero-title {
-        font-size: 24px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        max-width: 260px;
-        bottom: -24px;
-        padding: 6px;
-    }
-
-        .hero-buttons .btn {
-            height: 44px;
-            font-size: 15px;
-        }
 }
 
 .tab-section {
