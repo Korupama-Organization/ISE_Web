@@ -526,6 +526,155 @@ body.loaded {
   outline-offset: 2px;
 }
 
+/* Responsive styles for footer */
+@media (max-width: 1024px) {
+  .footer .class {
+    flex-direction: column;
+    gap: 40px;
+    padding: 32px 40px 48px;
+  }
+
+  .footer .frame {
+    max-width: 100%;
+  }
+
+  .footer .frame-4 {
+    max-width: 100%;
+  }
+
+  .footer .fit-uit-edu-vn {
+    font-size: 32px;
+  }
+
+  .footer .element-khoa-khoa-h-c-v {
+    font-size: 20px;
+  }
+
+  .footer .text-wrapper {
+    font-size: 24px;
+  }
+
+  .footer .text-wrapper-2 {
+    font-size: 24px;
+  }
+
+  .footer .text-wrapper-3 {
+    font-size: 20px;
+  }
+
+  .footer .p {
+    font-size: 20px;
+    max-width: 100%;
+  }
+
+  .footer .div-2 {
+    font-size: 20px;
+  }
+
+  .footer .frame-9 {
+    max-width: 100%;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer .class {
+    padding: 24px 24px 40px;
+    gap: 32px;
+  }
+
+  .footer .fit-uit-edu-vn {
+    font-size: 28px;
+  }
+
+  .footer .element-khoa-khoa-h-c-v {
+    font-size: 18px;
+  }
+
+  .footer .text-wrapper {
+    font-size: 22px;
+  }
+
+  .footer .text-wrapper-2 {
+    font-size: 22px;
+  }
+
+  .footer .text-wrapper-3 {
+    font-size: 18px;
+  }
+
+  .footer .p {
+    font-size: 18px;
+  }
+
+  .footer .div-2 {
+    font-size: 18px;
+  }
+
+  .footer .frame-9 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .footer .frame-3 {
+    gap: 20px;
+  }
+
+  .footer .img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .class {
+    padding: 20px 16px 32px;
+    gap: 24px;
+  }
+
+  .footer .frame {
+    gap: 24px;
+  }
+
+  .footer .fit-uit-edu-vn {
+    font-size: 24px;
+  }
+
+  .footer .element-khoa-khoa-h-c-v {
+    font-size: 16px;
+  }
+
+  .footer .text-wrapper {
+    font-size: 20px;
+  }
+
+  .footer .text-wrapper-2 {
+    font-size: 20px;
+  }
+
+  .footer .text-wrapper-3 {
+    font-size: 16px;
+  }
+
+  .footer .p {
+    font-size: 16px;
+  }
+
+  .footer .div-2 {
+    font-size: 16px;
+  }
+
+  .footer .frame-3 {
+    gap: 16px;
+  }
+
+  .footer .img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .footer .frame-3 {
   list-style: none;
   padding: 0;
