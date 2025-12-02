@@ -1,4 +1,4 @@
-/* ===== GENERAL STYLES FOR ENTIRE PAGE ===== */
+/* ===== KIỂU CHUNG CHO TOÀN BỘ TRANG ===== */
 
 /* Prevent horizontal scrolling and ensure full width */
 html, body {
@@ -6,20 +6,20 @@ html, body {
     width: 100%;
 }
 
-/* Hide body until page loads completely - prevent flash content */
+/* Ẩn body cho đến khi trang tải xong - ngăn chặn nội dung nhấp nháy */
 body:not(.loaded) {
     opacity: 0;
     transition: opacity 0.3s ease-in;
 }
 
-/* Display body when loading is complete */
+/* Hiển thị body khi tải xong */
 body.loaded {
     opacity: 1;
 }
 
-/* ===== HEADER STYLES ===== */
+/* ===== KIỂU HEADER ===== */
 
-/* Header styles - applies to both .header class and #header id */
+/* Kiểu header - áp dụng cho cả class .header và id #header */
 .header,
 #header {
     display: flex;
@@ -40,7 +40,7 @@ body.loaded {
     flex-wrap: nowrap;
 }
 
-/* Header logo styles */
+/* Kiểu logo header */
 .header-logo {
     display: inline-flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ body.loaded {
     display: block;
 }
 
-/* Navigation bar */
+/* Thanh điều hướng */
 .rHeader {
     flex: 1;
     display: flex;
@@ -87,7 +87,7 @@ body.loaded {
     flex-wrap: wrap;
 }
 
-/* Each item in navigation */
+/* Mỗi mục trong điều hướng */
 .navigation{
     list-style-type: none;
     padding: 12px;
@@ -97,19 +97,19 @@ body.loaded {
     position: relative; /* To position dropdown menu */
 }
 
-/* Hover effect for menu name */
+/* Hiệu ứng hover cho tên menu */
 .navigation .nav-name:hover{
     color:var(--Cyan-600,#0891B2);
 }
 
-/* Style for menu name */
+/* Kiểu cho tên menu */
 .navigation .nav-name{
     padding: 16px;
     text-decoration: none;
     color: var(--Cyan-950, #083344)
 }
 
-/* Dropdown menu appears on hover */
+/* Menu thả xuống xuất hiện khi hover */
 .dropdown-menu{
     position:absolute;
     bottom: 100%; /* Display above parent item */
@@ -127,7 +127,7 @@ body.loaded {
     z-index: 1001; /* Ensure display above other elements */
 }
 
-/* Style for items in dropdown */
+/* Kiểu cho các mục trong dropdown */
 .dropdown-item{
     justify-content: space-between;
     min-width: 200px;
@@ -139,27 +139,27 @@ body.loaded {
     line-height: inherit;
 }
 
-/* Remove bullet points for nav items */
+/* Loại bỏ dấu đầu dòng cho các mục nav */
 .nav-item{
     list-style-type: none;
 }
 
-/* Hover effect for dropdown items */
+/* Hiệu ứng hover cho các mục dropdown */
 .dropdown-item:hover{
     color: var(--Cyan-300, #67E8F9);
 }
 
-/* Hide dropdown by default */
+/* Ẩn dropdown theo mặc định */
 .dropdown-menu{
     display: none;
 }
 
-/* Show dropdown when hovering on navigation */
+/* Hiển thị dropdown khi hover trên điều hướng */
 .navigation:hover .dropdown-menu{display:block}
 
-/* Ensure dropdown menu works well on desktop */
+/* Đảm bảo menu dropdown hoạt động tốt trên desktop */
 @media (min-width: 769px) {
-    /* Ensure rHeader displays correctly on desktop */
+    /* Đảm bảo rHeader hiển thị đúng trên desktop */
     .rHeader {
         position: relative;
         display: flex;
@@ -174,7 +174,7 @@ body.loaded {
         padding: 0;
     }
     
-    /* Dropdown menu of last items align right */
+    /* Menu dropdown của các mục cuối cùng căn phải */
     .navigation:last-child .dropdown-menu,
     .navigation:nth-last-child(2) .dropdown-menu {
         left: auto;
@@ -182,19 +182,19 @@ body.loaded {
         bottom: 100%; /* Still display above */
     }
     
-    /* If dropdown is too long, automatically adjust position */
+    /* Nếu dropdown quá dài, tự động điều chỉnh vị trí */
     .navigation:hover .dropdown-menu {
         max-height: calc(100vh - 120px); /* Limit height */
         overflow-y: auto; /* Allow scroll if too long */
     }
     
-    /* Ensure dropdown menu is interactive */
+    /* Đảm bảo menu dropdown có thể tương tác */
     .dropdown-menu {
         pointer-events: auto; /* Allow clicks */
         visibility: visible;
     }
     
-    /* Ensure navigation is hoverable */
+    /* Đảm bảo điều hướng có thể hover */
     .navigation {
         position: relative;
         z-index: 1;
@@ -204,13 +204,13 @@ body.loaded {
         z-index: 1002; /* Increase z-index on hover */
     }
     
-    /* Hide overlay on desktop */
+    /* Ẩn overlay trên desktop */
     .mobile-menu-overlay {
         display: none !important;
     }
 }
 
-/* Hamburger Menu - hidden by default */
+/* Menu hamburger - ẩn theo mặc định */
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -232,7 +232,7 @@ body.loaded {
     transition: all 0.3s ease;
 }
 
-/* Effect when menu opens */
+/* Hiệu ứng khi menu mở */
 .hamburger-menu.active span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px);
 }
@@ -245,7 +245,7 @@ body.loaded {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* Overlay when mobile menu opens */
+/* Overlay khi menu mobile mở */
 .mobile-menu-overlay {
     display: none;
     position: fixed;
@@ -588,7 +588,7 @@ body.loaded {
   font-size: 24px;
 }
 
-/* Responsive adjustments */
+/* Điều chỉnh responsive */
 @media (max-width: 1440px) {
   .header, #header {
     width: 100%;
@@ -631,7 +631,7 @@ body.loaded {
         font-size: 18px;
     }
     
-    /* Ensure dropdown menu works well on tablet */
+    /* Đảm bảo menu dropdown hoạt động tốt trên tablet */
     .dropdown-menu {
         bottom: 100%; /* Display above */
         max-height: 60vh; /* Limit height */
@@ -640,7 +640,7 @@ body.loaded {
         pointer-events: auto;
     }
     
-    /* Ensure navigation is hoverable */
+    /* Đảm bảo điều hướng có thể hover */
     .navigation {
         position: relative;
         z-index: 1;
@@ -717,7 +717,7 @@ body.loaded {
         height: 70px;
     }
 
-    /* Show hamburger menu on mobile */
+    /* Hiển thị menu hamburger trên mobile */
     .hamburger-menu {
         display: flex;
         order: 2;
@@ -725,7 +725,7 @@ body.loaded {
         z-index: 1001;
     }
 
-    /* Hide navigation by default on mobile */
+    /* Ẩn điều hướng theo mặc định trên mobile */
     .rHeader {
         position: fixed;
         top: 70px; /* Right below header */
@@ -743,7 +743,7 @@ body.loaded {
         /* Ensure menu always displays on top */
     }
 
-    /* Show navigation when active - dropdown from top down */
+    /* Hiển thị điều hướng khi active - dropdown từ trên xuống */
     .rHeader.active {
         max-height: calc(100vh - 70px);
         overflow-y: auto;
@@ -771,7 +771,7 @@ body.loaded {
         flex-shrink: 0; /* Ensure it doesn't shrink */
     }
     
-    /* Ensure "Contact" item (last item) always displays */
+    /* Đảm bảo mục "Contact" (mục cuối) luôn hiển thị */
     .navigation:last-child {
         border-bottom: none;
         margin-bottom: 0;
@@ -892,7 +892,7 @@ body.loaded {
         padding: 6px;
     }
 
-    /* Dropdown menu from top for small screens */
+    /* Menu dropdown từ trên cho màn hình nhỏ */
     .rHeader {
         top: 60px;
         width: 100%;
@@ -981,7 +981,7 @@ body.loaded {
         padding: 5px;
     }
 
-    /* Dropdown menu from top for very small screens */
+    /* Menu dropdown từ trên cho màn hình rất nhỏ */
     .rHeader {
         top: 55px;
         width: 100%;
