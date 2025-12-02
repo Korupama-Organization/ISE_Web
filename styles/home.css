@@ -595,9 +595,12 @@
         font-size: 16px;
     }
     
-    .welcome{
-        width: 90%;
-        gap: 30px;
+    .welcome,
+    .field-introduction,
+    .field {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
     }
     
     .welcome-img img{
@@ -741,10 +744,12 @@
         font-size: 14px;
     }
     
-    .welcome{
-        flex-direction: column;
-        width: 90%;
-        gap: 20px;
+    .welcome,
+    .field-introduction,
+    .field {
+        margin-left: auto;
+        margin-right: auto;
+        width: 98%;
     }
     
     .welcome-img img{
@@ -960,9 +965,12 @@
         width: 20px;
     }
     
-    .welcome{
-        margin-top: 30px;
-        gap: 15px;
+    .welcome,
+    .field-introduction,
+    .field {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
     }
     
     .welcome-content p{
