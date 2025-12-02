@@ -112,8 +112,8 @@ body.loaded {
 /* Menu thả xuống xuất hiện khi hover */
 .dropdown-menu{
     position:absolute;
-    bottom: 100%; /* Display above parent item */
-    left: 0; /* Align left with parent item */
+    top: 100%; /* Hiển thị phía dưới mục cha */
+    left: 0; /* Căn trái với mục cha */
     display:block;
     padding: 24px;
     background-color: var(--Cyan-950, #083344);
@@ -122,8 +122,8 @@ body.loaded {
     border-radius: 8px;
     line-height: 40px;
     min-width: 200px; /* Minimum width */
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Shadow pointing upward */
-    margin-bottom: 8px; /* Distance from parent item */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Bóng đổ xuống */
+    margin-top: 8px; /* Khoảng cách so với mục cha */
     z-index: 1001; /* Ensure display above other elements */
 }
 
@@ -179,7 +179,7 @@ body.loaded {
     .navigation:nth-last-child(2) .dropdown-menu {
         left: auto;
         right: 0; /* Align right with parent item */
-        bottom: 100%; /* Still display above */
+        top: 100%; /* Luôn xổ xuống dưới */
     }
     
     /* Nếu dropdown quá dài, tự động điều chỉnh vị trí */
