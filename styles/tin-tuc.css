@@ -602,11 +602,11 @@ body {
 }
 
          /* ===== TRANG TIN TỐT CHI TIẾT ===== */
-section {
+.news-section {
     display: none; /* Ẩn tất cả mặc định */
 }
 
-section:target {
+.news-section:target {
     display: block; /* Chỉ hiện section có id trùng với # trên URL */
 }
 
